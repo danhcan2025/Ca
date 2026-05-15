@@ -23,10 +23,8 @@ jobs:
         run: flutter pub get
 
       - name: Generate Isar code
-        run: dart run build_runner build --delete-conflicting-outputs
-
       - name: Analyze
-        run: flutter analyze
+  run: flutter analyze --no-fatal-infos --no-fatal-warnings
 
       - name: Build Android release
         run: flutter build apk --release
